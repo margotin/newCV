@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} | Compétences
+{% endblock %}
+
+{% block section %}
+	<h1>Compétences</h1>
+	<div class="row alert alert-light shadow">
+
+		<div class="col-12 d-flex align-items-center">
+
+			<h4 class="font-italic col-3 d-none d-md-block d-lg-block d-xl-block">Programmation</h4>
+			<div class="col d-flex align-items-center flex-wrap">
+				<span class="badge badge-dark shadow m-2 px-4 py-2">PHP</span>
+				<span class="badge badge-dark shadow m-2 px-4 py-2">Javascript</span>
+				<span class="badge badge-dark shadow m-2 px-4 py-2">HTML5 / CSS3</span>
+				<span class="badge badge-light shadow m-2 px-4 py-2">Symfony</span>
+				<span class="badge badge-light shadow m-2 px-4 py-2">React</span>
+				<span class="badge badge-light shadow m-2 px-4 py-2">Bootstrap</span>
+			</div>
+
+		</div>
+	</div>
+	<div class="row alert alert-light shadow">
+		<div class="col-12 d-flex align-items-center ">
+			<h4 class="font-italic col-3 d-none d-md-block d-lg-block d-xl-block">SGBD</h4>
+			<div class="col d-flex flex-wrap">
+				<span class="badge badge-success shadow m-2 px-4 py-2">MySQL</span>
+				<span class="badge badge-success shadow m-2 px-4 py-2">MariaDB</span>
+			</div>
+		</div>
+	</div>
+	<div class="row alert alert-light shadow">
+		<div class="col-12 d-flex align-items-center ">
+			<h4 class="font-italic col-3 d-none d-md-block d-lg-block d-xl-block">Versioning</h4>
+			<div class="col d-flex flex-wrap align-items-center">
+				<span class="badge badge-info shadow m-2 px-4 py-2">Git</span>
+			</div>
+		</div>
+	</div>
+	<div class="row alert alert-light shadow d-none d-md-block d-lg-block d-xl-block">
+		<div class="col-12 d-flex align-items-center ">
+			<h4 class="font-italic col-3">Notions</h4>
+			<div class="col d-flex flex-wrap">
+				<span class="badge badge-primary shadow m-2 px-4 py-2">C</span>
+				<span class="badge badge-primary shadow m-2 px-4 py-2">Java</span>
+				<span class="badge badge-primary shadow m-2 px-4 py-2">Docker</span>
+				<span class="badge badge-primary shadow m-2 px-4 py-2">PHPUnit</span>
+				<span class="badge badge-primary shadow m-2 px-4 py-2">TDD</span>
+			</div>
+		</div>
+	</div>
+	<div class="row alert alert-light shadow">
+		<div class="col-12 d-flex align-items-center ">
+			<h4 class="font-italic col-3 d-none d-md-block d-lg-block d-xl-block">OS</h4>
+			<div class="col d-flex flex-wrap">
+				<span class="badge badge-warning shadow m-2 px-4 py-2">Windows 10</span>
+				<span class="badge badge-warning shadow m-2 px-4 py-2">Ubuntu server 18.04</span>
+			</div>
+		</div>
+	</div>
+	<div class="row alert alert-light shadow d-none d-md-block d-lg-block d-xl-block">
+		<div class="col-12 d-flex align-items-center ">
+			<h4 class="font-italic col-3">En cours</h4>
+			<div class="col d-flex flex-wrap">
+				<span class="badge badge-secondary shadow m-2 px-4 py-2">PHPUnit</span>
+				<span class="badge badge-secondary shadow m-2 px-4 py-2">TDD</span>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

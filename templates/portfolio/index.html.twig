@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	| Portfolio
+{% endblock %}
+
+{% block section %}
+	<h1>Portfolio</h1>
+	<div class="d-flex flex-wrap justify-content-around">
+
+		<div class="card mb-5 shadow" style="width: 18rem">
+			<img src="/img/psychologue-toulon.venez.fr.jpg" class="card-img-top" alt="..."/>
+			<div class="card-body position-relative">
+				<h5 class="card-title text-center">Réalisation site Web
+					<br>(Octobre 2020)</h5>
+				<p class="card-text mb-5">
+					<u>Technologies principales utilisées :</u>
+					<br/>
+					<small>Symfony 5.1 / ReactJS /MariaDB / JWT</small>
+				</p>
+				<div class="position-absolute" style="bottom:10px">
+					<a href="https://psychologue-toulon.venez.fr/" target="_blank" class="btn btn-primary btn-block">Go !</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mb-5 shadow " style="width: 18rem">
+			<img src="/img/psychologue-montrouge.fr.png" class="card-img-top" alt="..."/>
+			<div class="card-body position-relative">
+				<h5 class="card-title text-center">Réalisation site Web
+					<br>(Mai 2019)</h5>
+				<p class="card-text mb-5">
+					<u>Technologies principales utilisées :</u>
+					<br/>
+					<small>Symfony 3.4 / MySQL</small>
+				</p>
+        <div class="position-absolute" style="bottom:10px">
+				  <a href="https://psychologue-montrouge.fr/" target="_blank" class="btn btn-primary">Go !</a>
+        </div>
+			</div>
+		</div>
+
+		<div class="card mb-5 shadow " style="width: 18rem">
+			<img src="/img/la-boutique-francaise.mathieumargotin.fr.jpg" class="card-img-top" alt="..."/>
+			<div class="card-body position-relative">
+				<h5 class="card-title text-center">Site Web factice
+					<br>(Octobre 2020)</h5>
+				<p class="card-text mb-5">
+					<u>Technologies principales utilisées :</u>
+					<br/>
+					<small>Symfony 5.1 / MariaDB / API Stripe / API Mailjet</small>
+				</p>
+        <div class="position-absolute" style="bottom:10px">
+				<a href="https://la-boutique-francaise.mathieumargotin.fr/" target="_blank" class="btn btn-success">Test !</a>
+        </div>
+			</div>
+		</div>
+
+		<div class="card mb-5 shadow " style="width: 18rem">
+			<img src="/img/symreact.mathieumargotin.fr.png" class="card-img-top" alt="..."/>
+			<div class="card-body position-relative">
+				<h5 class="card-title text-center">Application Web factice
+					<br>(Septembre 2020)</h5>
+				<p class="card-text mb-5">
+					<u>Technologies principales utilisées :</u>
+					<br/>
+					<small>Symfony 4.4 / API Platform / ReactJS / MariaDB</small>
+				</p>
+        <div class="position-absolute" style="bottom:10px">
+				<a href="https://symreact.mathieumargotin.fr/" target="_blank" class="btn btn-success">Test !</a>
+        </div>
+			</div>
+		</div>
+
+		<div class="card mb-5 shadow " style="width: 18rem">
+			<img src="/img/mathieumargotin.fr.png" class="card-img-top" alt="..."/>
+			<div class="card-body position-relative">
+				<h5 class="card-title text-center">CV en ligne
+					<br>(Novembre 2020)</h5>
+				<p class="card-text mb-5">
+					<u>Technologies principales utilisées :</u>
+					<br/>
+					<small>Symfony 4.4 / MariaDB</small>
+				</p>
+        <div class="position-absolute" style="bottom:10px">
+				<a href="https://mathieumargotin.fr/" class="btn btn-warning">You're already here !</a>
+        </div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
