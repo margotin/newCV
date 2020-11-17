@@ -1,0 +1,9 @@
+<h2>{{ title }}</h2>
+<hr>
+ {{ form_start(form) }}
+    {{ form_row(form.name) }}    
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">{{ action }}</button>
+        <a href="{{ path('manage_school') }}" class="btn btn-secondary">Retour</a>
+    </div>     
+{{ form_end(form) }}

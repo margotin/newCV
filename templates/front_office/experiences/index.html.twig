@@ -1,0 +1,24 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block title %}{{ parent() }} | Expériences professionelles{% endblock %}
+
+{% block section %}
+  <h1>Expériences <span class="d-none  d-md-inline d-lg-inline d-xl-inline">professionnelles</span></h1>
+  {% for experience in experiences %}  
+    <div class="alert alert-light shadow mb-4">
+      <h4 class="alert-heading">{{ experience.title }}</h4>
+      <p> 
+          {{ experience.startAt|format_datetime(pattern='MMMM Y')|capitalize }} – 
+          {{ experience.endAt ? experience.endAt|format_datetime(pattern='MMMM Y')|capitalize : 'Aujourd\'hui' }}, 
+          {{ experience.location }}
+        </p>
+      <h6 class="lead">{{ experience.company }}</h6>
+      <hr class="mt-0">
+      <ul>
+        {% for work in experience.works %}
+          <li>{{ work }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+{% endblock %}

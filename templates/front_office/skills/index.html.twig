@@ -1,0 +1,22 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} | Compétences
+{% endblock %}
+
+{% block section %}
+	<h1>Compétences</h1>	
+
+	{% for categoryName, skill in skills %}
+		<div class="row alert alert-light shadow">
+			<div class="col-12 d-flex align-items-center">
+				<h4 class="font-italic col-3 d-none d-md-block d-lg-block d-xl-block">{{ categoryName }}</h4>
+				<div class="col d-flex align-items-center flex-wrap">
+					{% for skillName in skill %}
+						<span class="badge badge-primary shadow m-2 px-4 py-2">{{ skillName }}</span>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

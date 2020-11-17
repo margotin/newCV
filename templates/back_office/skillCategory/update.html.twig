@@ -1,0 +1,6 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+    {% include 'back_office/skillCategory/_form.html.twig' with { form: form, title: "Modifier une catégorie", action: "Modifier" } %}
+{% endblock %}
+

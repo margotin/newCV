@@ -1,0 +1,49 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+  <div class="d-flex">
+      <h2 class="h1">Écoles</h2>
+      <a href="{{ path('create_school') }}" class="btn btn-sm btn-primary ml-3 align-self-center">Créer une école</a>
+  </div>
+	<table class="table table-sm table-hover mt-4">
+  <thead>
+    <tr>
+      <th>Nom</th>      
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for school in schools %}
+    <tr>
+      <td class="align-middle">{{school.name}}</th>
+      <td style="width: 80px" class="align-middle">
+        <a href="{{ path('update_school', { id: school.id}) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+        <a href="{{ path('delete_school', { id: school.id}) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+      </td>
+      
+    </tr>
+  {% else %}
+    <tr>
+      <td colspan="2">Aucun diplôme...</td>
+      
+    </tr>
+  {% endfor %}
+  
+    
+  </tbody>
+</table>
+
+
+{% endblock %}
+
+
+
