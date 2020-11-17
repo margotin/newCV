@@ -1,0 +1,51 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
+ <div class="d-flex">
+      <h2 class="h1">Compétence</h2>
+      <a href="{{ path('create_skill') }}" class="btn btn-sm btn-primary ml-3 align-self-center">Créer une compétence</a>
+  </div>
+	<table class="table table-sm table-hover mt-4">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Categories</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for skill in skills %}
+    <tr>
+      <td class="align-middle">{{ skill.name }}</th>
+      <td class="align-middle">       
+      {% for category in skill.skillCategories %}
+        <span class="badge badge-success ">{{ category.name }}</span>        
+      {% endfor %}
+     
+      </th>
+      <td style="width: 80px" class="align-middle">
+        <a href="{{ path('update_skill', { id: skill.id }) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+        <a href="{{ path('delete_skill', { id: skill.id }) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+      </td>
+    </tr>
+  {% else %}
+    <tr>
+      <td colspan="3">Aucune compétence...</td>      
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+
+

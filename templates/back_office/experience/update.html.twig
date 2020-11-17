@@ -1,0 +1,9 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+    {% include 'back_office/experience/_form.html.twig' with { form: form, title: "Modifier une expérience", action: "Modifier" } %}
+{% endblock %}
+
+{% block javascripts %}
+     {% include 'back_office/experience/_form_javascript.html.twig' %}
+{% endblock %}

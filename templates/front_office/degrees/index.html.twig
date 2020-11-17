@@ -1,0 +1,20 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block title %}{{ parent() }} | Diplômes{% endblock %}
+
+{% block section %}
+  <h1>Diplômes</h1>
+  
+  {% for degree in degrees %}
+    <div class="alert alert-light shadow mb-4">
+      <h4 class="alert-heading">{{ degree.name }}</h4>
+      <p> 
+        {{ degree.startAt|format_datetime(pattern='MMMM Y')|capitalize }} – 
+        {{ degree.endAt ? degree.endAt|format_datetime(pattern='MMMM Y')|capitalize : 'Aujourd\'hui' }}, 
+        {{ degree.location }}
+      </p>
+      <hr>
+      <p class="mb-0">{{ degree.school.name }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+
+ <div class="d-flex">
+      <h2 class="h1">Expérience</h2>
+      <a href="{{ path('create_experience') }}" class="btn btn-sm btn-primary ml-3 align-self-center">Créer une expérience</a>
+  </div>
+	<table class="table table-sm table-hover mt-4">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Début</th>
+      <th>Fin</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for experience in experiences %}
+    <tr>
+      <td class="align-middle">{{ experience.title }}</th>
+      <td class="align-middle">{{ experience.startAt|format_datetime(pattern='MMMM Y')|capitalize }}</th>
+      <td class="align-middle">{{ experience.endAt ? experience.endAt|format_datetime(pattern='MMMM Y')|capitalize : 'Aujourd\'hui' }}</th>
+      <td style="width: 80px" class="align-middle">
+        <a href="{{ path('update_experience', { id: experience.id }) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+        <a href="{{ path('delete_experience', { id: experience.id }) }}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+      </td>
+    </tr>
+  {% else %}
+    <tr>
+      <td colspan="4">Aucune expérience...</td>      
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+
+
+

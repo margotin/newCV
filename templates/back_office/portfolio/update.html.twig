@@ -1,0 +1,9 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+    {% include 'back_office/portfolio/_form.html.twig' with { form: form, title: "Modifier un portfolio", action: "Modifier" } %}
+{% endblock %}
+
+{% block javascripts %}
+     {% include 'back_office/portfolio/_form_javascript.html.twig' %}
+{% endblock %}

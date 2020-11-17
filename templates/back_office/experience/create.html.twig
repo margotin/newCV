@@ -1,0 +1,9 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+    {% include 'back_office/experience/_form.html.twig' with { form: form, title: "Créer une experience", action: "Créer" } %}
+{% endblock %}
+
+{% block javascripts %}
+     {% include 'back_office/experience/_form_javascript.html.twig' %}
+{% endblock %}

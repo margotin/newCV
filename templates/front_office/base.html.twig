@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Bienvenue sur mon CV en ligne ! "/>
+		<meta name="keywords" content="mathieu, margotin, cv, developpeur"/>
+		<meta name="author" content="Mathieu Margotin"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>
+			{% block title %}Mathieu MARGOTIN | Développeur Web{% endblock %}
+		</title>
+		{{ encore_entry_link_tags('app') }}
+		{% block stylesheets %}{% endblock %}
+		</head>
+		<body class="user-select-none">
+			<header>
+				<nav class="navbar navbar-expand-lg navbar-light container">
+
+					<div class="navbar-brand MM-title" data-hover="Développeur Web">
+						<span>Mathieu Margotin</span>
+					</div>
+
+					<button class="navbar-toggler" type="button">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-end">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('home') }}">Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('skills') }}">Compétences</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('portfolio') }}">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('experiences') }}">Expériences</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('degrees') }}">Diplômes</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link MM-a-size" href="{{ path('contact') }}">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			
+            <div class="container pb-custom"> 
+            <section>
+            {% block section %}{% endblock %}
+            </section>
+				</div>
+				<footer>
+					<div class="container d-flex flex-column justify-content-center h-100">
+						<span>Mathieu Margotin© {{date()|date("Y")}} Tous droits réservés <a href="#"><img src="{{ asset('img/connexion.png') }}" alt="logo connexion" width="30"></a></span>
+						<div class="d-flex justify-content-center mt-1">
+							<a class="mr-2" href="https://www.linkedin.com/in/margotin-mathieu" target="_blank"><img src="{{ asset('img/linkedin-icon-2.svg') }}" alt="logo du site Linkedin" width="30"></a>
+							<a class="mr-2" href="https://github.com/margotin" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
+						</div>
+					</div>
+				</footer>
+
+				
+				{{ encore_entry_script_tags('app') }}
+				{% block javascripts %}
+				{% endblock %}
+			</body>
+		</html>
