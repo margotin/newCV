@@ -1,0 +1,16 @@
+{% extends 'back_office/admin.base.html.twig' %}
+
+{% block body %}
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+      <h2 class="h1">Accueil</h2>
+{% endblock %}
+
+
+

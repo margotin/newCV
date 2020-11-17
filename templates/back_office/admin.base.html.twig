@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="author" content="Mathieu Margotin"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>
+			{% block title %}Administration{% endblock %}
+		</title>
+		{{ encore_entry_link_tags('app') }}
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		<div class="container mt-3">
+		
+			<div class="row mb-5">
+				<a href="{{ path('home') }}" class="btn btn-lg btn-block btn-outline-primary">Retour au site</a>
+			</div>
+		
+			<div class="row">
+				<div class="col-2">
+				<div class="list-group">
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_home') }}">Acceuil</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_skill') }}">Compétences</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_skill_category') }}">Catégories</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_portfolio') }}">Portfolio</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_experience') }}">Expériences</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_degree') }}">Diplômes</a>
+					<a class="list-group-item list-group-item-action list-group-item-info" href="{{ path('manage_school') }}">Écoles</a>
+				</div>
+				</div>
+				<div class="col-10">
+					{% block body %}{% endblock %}
+				</div>
+			</div>
+			
+		</div>
+		
+			
+			{{ encore_entry_script_tags('app') }}
+			{% block javascripts %}
+			{% endblock %}
+	</body>
+</html>

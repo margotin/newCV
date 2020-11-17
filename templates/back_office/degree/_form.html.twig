@@ -1,0 +1,30 @@
+<h2>{{ title }}</h2>
+<hr>
+
+{{ form_start(form) }}
+    
+        <div class="form-error">
+            {{ form_errors(form) }}
+        </div>
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.location) }}
+        {{ form_row(form.startAt) }}
+        {{ form_row(form.endAt) }}
+        <div class="row">
+            <div class="col-9">
+                {{ form_row(form.school) }}
+            </div>
+            <div class="col-3 my-auto text-center"> 
+                <a href="{{ path('create_school') }}" class="btn btn-outline-success btn-sm"><i class="fas fa-plus"></i> Créer une école</a>  
+            </div>
+        </div>
+         
+       
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">{{ action }}</button>
+            <a href="{{ path('manage_degree') }}" class="btn btn-secondary">Retour</a>
+        </div>
+
+{{ form_end(form) }}

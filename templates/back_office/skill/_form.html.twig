@@ -1,0 +1,28 @@
+<h2>{{ title }}</h2>
+<hr>
+
+{{ form_start(form) }}
+    
+        <div class="form-error">
+            {{ form_errors(form) }}
+        </div>
+
+        {{ form_row(form.name) }}
+        <div class="row">
+            <div class="col-9">
+                {{ form_row(form.skillCategories) }}
+                
+            </div>
+            <div class="col-3 my-auto text-center"> 
+                <a href="{{ path('create_skill_category') }}" class="btn btn-outline-success btn-sm"><i class="fas fa-plus"></i> Créer une catégorie</a>  
+            </div>
+        </div>
+         
+       
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">{{ action }}</button>
+            <a href="{{ path('manage_skill') }}" class="btn btn-secondary">Retour</a>
+        </div>
+
+{{ form_end(form) }}
