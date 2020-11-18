@@ -1,0 +1,11 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block title %}{{ parent() }} | Page non trouvée{% endblock %}
+
+{% block section %}
+    <div class="alert alert-warning mt-5">
+        <span class="h1">Oups !</span> <br /> <span class="h4">La page demandée n'existe pas...</span>
+    </div>
+    <hr>
+    <a href="{{ path('home') }}" class="btn btn-primary">Retour à l'accueil</a>
+{% endblock %}

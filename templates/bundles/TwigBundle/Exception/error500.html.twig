@@ -1,0 +1,11 @@
+{% extends 'front_office/base.html.twig' %}
+
+{% block title %}{{ parent() }} | Erreur serveur{% endblock %}
+
+{% block section %}
+    <div class="alert alert-danger mt-5">
+        <span class="h2">Oups, une erreur au niveau du serveur est survenue !</span> <br /> <span class="h5">Désolé, je la corrige au plus vite !</span> <br /> <span>Merci.</span>        
+    </div>
+    <hr>
+    <a href="{{ path('home') }}" class="btn btn-primary">Retour à l'accueil</a>
+{% endblock %}

@@ -10,7 +10,6 @@
 			{% block title %}Mathieu MARGOTIN | Développeur Web{% endblock %}
 		</title>
 		{{ encore_entry_link_tags('app') }}
-		{% block stylesheets %}{% endblock %}
 		</head>
 		<body class="user-select-none">
 			<header>
@@ -49,23 +48,29 @@
 			</header>
 			
             <div class="container pb-custom"> 
-            <section>
-            {% block section %}{% endblock %}
-            </section>
-				</div>
-				<footer>
-					<div class="container d-flex flex-column justify-content-center h-100">
-						<span>Mathieu Margotin© {{date()|date("Y")}} Tous droits réservés <a href="#"><img src="{{ asset('img/connexion.png') }}" alt="logo connexion" width="30"></a></span>
-						<div class="d-flex justify-content-center mt-1">
-							<a class="mr-2" href="https://www.linkedin.com/in/margotin-mathieu" target="_blank"><img src="{{ asset('img/linkedin-icon-2.svg') }}" alt="logo du site Linkedin" width="30"></a>
-							<a class="mr-2" href="https://github.com/margotin" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
-						</div>
+				<section>
+				{% block section %}{% endblock %}
+				</section>
+			</div>
+			<footer>
+				<div class="container d-flex flex-column justify-content-center h-100">					
+						
+					<span>Mathieu Margotin© {{date()|date("Y")}} Tous droits réservés 
+					{% if app.user %}
+						<a href="{{ path('account_logout') }}"><span style="color: black;"><i class="fas fa-power-off"></i></span></a>
+					{% else %}
+						<a href="{{ path('account_login') }}"><span style="color: black;"><i class="fas fa-user-secret"></i></span></a>
+					{% endif %}
+					<div class="d-flex justify-content-center mt-1">
+						<a class="mr-2" href="https://www.linkedin.com/in/margotin-mathieu" target="_blank"><img src="{{ asset('img/linkedin-icon-2.svg') }}" alt="logo du site Linkedin" width="30"></a>
+						<a class="mr-2" href="https://github.com/margotin" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
 					</div>
-				</footer>
+				</div>
+			</footer>
 
-				
-				{{ encore_entry_script_tags('app') }}
-				{% block javascripts %}
-				{% endblock %}
-			</body>
-		</html>
+			
+			{{ encore_entry_script_tags('app') }}
+			{% block javascripts %}
+			{% endblock %}
+	</body>
+</html>

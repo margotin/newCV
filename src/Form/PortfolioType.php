@@ -39,7 +39,8 @@ class PortfolioType extends AbstractType
                 'label' => "URL du site"
             ])
             ->add('githubUrl', TextType::class,[
-                'label' => "Github"
+                'label' => "Github",
+                'required' => false
             ])
         ;
     }
