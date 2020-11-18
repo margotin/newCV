@@ -10,6 +10,9 @@ import "./styles/app.scss";
 import "./styles/css/style.css";
 import "../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css";
 import "@fortawesome/fontawesome-free/css/all.css"
+import Swup from 'swup';
+import SwupSlideTheme from '@swup/slide-theme';
+const swup = new Swup({plugins: [new SwupSlideTheme({'reversed':true})]});
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 import $ from "jquery";
@@ -78,3 +81,5 @@ if (button !== null) {
     }
   });
 }
+
+

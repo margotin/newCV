@@ -17,25 +17,25 @@
 				<div class="collapse navbar-collapse">
 					<ul class="navbar-nav mr-auto">	
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_home') }}">Acceuil</a>
+							<a class="nav-link" href="{{ path('manage_home') }}"><i class="fas fa-home"></i> Acceuil</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_skill') }}">Compétences</a>
+							<a class="nav-link" href="{{ path('manage_skill') }}"><i class="far fa-star"></i> Compétences</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_skill_category') }}">Catégories</a>
+							<a class="nav-link" href="{{ path('manage_skill_category') }}"><i class="far fa-folder"></i> Catégories</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_portfolio') }}">Portfolio</a>
+							<a class="nav-link" href="{{ path('manage_portfolio') }}"><i class="fas fa-suitcase-rolling"></i> Portfolio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_experience') }}">Expériences</a>
+							<a class="nav-link" href="{{ path('manage_experience') }}"><i class="fas fa-glasses"></i> Expériences</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_degree') }}">Diplômes</a>
+							<a class="nav-link" href="{{ path('manage_degree') }}"><i class="fas fa-trophy"></i> Diplômes</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('manage_school') }}">Écoles</a>
+							<a class="nav-link" href="{{ path('manage_school') }}"><i class="fas fa-school"></i> Écoles</a>
 						</li>
 					</ul>
 					<ul class="navbar-nav ml-auto">
@@ -54,11 +54,11 @@
 		</header>
 
 
-		<div class="container mt-3"> 
+		<div class="container mt-3 mb-5"> 
 			{% block body %}{% endblock %}
 		</div>
 
-		<footer class="mt-5 text-center align-middle" style="background-color: #9c88ff; height:auto;">
+		<footer class="text-center align-middle" style="background-color: #9c88ff; height:auto;">
 			<span>Copyright Mathieu MARGOTIN</span>
 		</footer>
 
