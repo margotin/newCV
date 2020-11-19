@@ -1,0 +1,10 @@
+<span>Mathieu Margotin© {{date()|date("Y")}} Tous droits réservés 
+{% if app.user %}
+    <a href="{{ path('account_logout') }}"><span style="color: black;"><i class="fas fa-power-off"></i></span></a>
+{% else %}
+    <a href="{{ path('account_login') }}"><span style="color: black;"><i class="fas fa-user-secret"></i></span></a>
+{% endif %}
+<div class="d-flex justify-content-center mt-1">
+    <a class="mr-2" href="https://www.linkedin.com/in/margotin-mathieu" target="_blank"><img src="{{ asset('img/linkedin-icon-2.svg') }}" alt="logo du site Linkedin" width="30"></a>
+    <a class="mr-2" href="https://github.com/margotin" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
+</div>

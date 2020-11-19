@@ -1,105 +1,35 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8"/>
-		<meta name="description" content="Bienvenue sur mon CV en ligne ! "/>
-		<meta name="keywords" content="mathieu, margotin, cv, developpeur"/>
-		<meta name="author" content="Mathieu Margotin"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>
-			{% block title %}Mathieu MARGOTIN | Développeur Web{% endblock %}
-		</title>
-		{{ encore_entry_link_tags('app') }}
-		</head>
-		<body class="user-select-none">
-			<header>
-				<nav class="navbar navbar-expand-lg navbar-light">
+{% extends "base.html.twig" %}
 
-					<div class="navbar-brand MM-title" data-hover="Développeur Web">
-						<span>Mathieu Margotin</span>
-					</div>
-
-					<button class="navbar-toggler" type="button">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="ml-lg-4 collapse navbar-collapse">
-						<ul class="navbar-nav">
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('home') }}"><span style="display:inline-block; width: 27px; text-align:center;"><i class="fas fa-home"></i></span> Accueil</a>
-							</li>
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('experiences') }}"><span style="display:inline-block;width: 27px; text-align:center;"><i class="fas fa-glasses"></i></span> Expériences</a>
-							</li>
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('degrees') }}"><span style="display:inline-block;width: 27px; text-align:center;"><i class="fas fa-trophy"></i></span> Diplômes</a>
-							</li>
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('skills') }}"><span style="display:inline-block;width: 27px; text-align:center;"><i class="far fa-star"></i></span> Compétences</a>
-							</li>
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('portfolio') }}"><span style="display:inline-block;width: 27px; text-align:center;"><i class="fas fa-suitcase-rolling"></i></span> Portfolio</a>
-							</li>
-							<li class="nav-item mr-2">
-								<a class="nav-link MM-a-size" href="{{ path('contact') }}"><span style="display:inline-block;width: 27px; text-align:center;"><i class="far fa-address-book"></i></span> Contact</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</header>
-			
-            <div id="swup"  class="container pb-custom"> 
-				<section >
-					{% block section %}{% endblock %}
-				</section>
-			</div>
-			<footer>
-				<div class="container d-flex flex-column justify-content-center h-100">					
-						
-					<span>Mathieu Margotin© {{date()|date("Y")}} Tous droits réservés 
-					{% if app.user %}
-						<a href="{{ path('account_logout') }}"><span style="color: black;"><i class="fas fa-power-off"></i></span></a>
-					{% else %}
-						<a href="{{ path('account_login') }}"><span style="color: black;"><i class="fas fa-user-secret"></i></span></a>
-					{% endif %}
-					<div class="d-flex justify-content-center mt-1">
-						<a class="mr-2" href="https://www.linkedin.com/in/margotin-mathieu" target="_blank"><img src="{{ asset('img/linkedin-icon-2.svg') }}" alt="logo du site Linkedin" width="30"></a>
-						<a class="mr-2" href="https://github.com/margotin" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
-					</div>
-				</div>
-			</footer>
-
-			
-			{{ encore_entry_script_tags('app') }}
-			
-			<script type="text/javascript">
-				var onloadCallback = function() {
-					grecaptcha.render('g-recaptcha', {
-					'sitekey' : '{{ sitekey }}'
-					});
-				}; 
-
-				document.addEventListener('swup:contentReplaced', (event) => {				
-					if(event.target.activeElement.pathname === '/contact'){	
-						const scriptRecaptchaId = document.querySelector('#script-recaptcha')						
-						const errorFormContact = document.querySelector('#error_form_contact')						
-						if(!scriptRecaptchaId){
-							const script = document.createElement('script');
-							script.src = "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit";
-							script.id = "script-recaptcha";
-							document.body.appendChild(script); 							
-						}else{
-							onloadCallback();
-						}
-
-						if(errorFormContact){
-							errorFormContact.parentNode.removeChild(errorFormContact);
-						}
-					}
-				});
+{% block meta %}
+	<meta name="description" content="Bienvenue sur mon CV en ligne ! "/>
+	<meta name="keywords" content="mathieu, margotin, cv, developpeur"/>
+{% endblock %}
+{% block title %}Mathieu MARGOTIN | Développeur Web{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+{% block header %}
+	{% include "front_office/partial/_header.html.twig" %}
+{% endblock %}		
+	
+{% block main %}
+<div id="swup"  class="container pb-custom"> 
+	<section >
+		{% block section %}{% endblock %}
+	</section>
+</div>
+{% endblock %}	
 				
-
-			</script>
+{% block footer %}
+	{% include "front_office/partial/_footer.html.twig" %}
+{% endblock %}
 			
-			{% block javascripts %}{% endblock %}
-	</body>
-</html>
+            
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+	{{ encore_entry_script_tags('page') }}		
+
+		
+{% endblock %}			
+
+			
+			
+		

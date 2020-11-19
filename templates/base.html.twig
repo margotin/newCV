@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="author" content="Mathieu Margotin"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block meta %}{% endblock %}		
+        <title>
+			{% block title %}{% endblock %}
+		</title>		
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body class="user-select-none"> 
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% block main %}{% endblock %}
+        <footer>
+            {% block footer %}{% endblock %}
+        </footer>
+        {% block javascripts %}{% endblock %}
+	</body>
+</html>

@@ -1,4 +1,5 @@
 var Encore = require('@symfony/webpack-encore');
+var dotenv = require('dotenv');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -24,6 +25,10 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('page', './assets/frontOffice/page.js')
+    .addEntry('date', './assets/backOffice/date.js')
+    .addEntry('experience', './assets/backOffice/experience.js')
+    .addEntry('portfolio', './assets/backOffice/portfolio.js')
     //.addEntry('page1', './assets/page1.js')
     //.addEntry('page2', './assets/page2.js')
 
@@ -69,6 +74,15 @@ Encore
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
     //.addEntry('admin', './assets/admin.js')
+
+    // define the environment variables
+    .configureDefinePlugin(options => {
+       const env = dotenv.config({path:'./.env.local'});
+        if (env.error) {
+            throw env.error;
+        }
+        options['process.env'].CAPTCHA_SITE_KEY = JSON.stringify(env.parsed.CAPTCHA_SITE_KEY);
+    })
 ;
 
 module.exports = Encore.getWebpackConfig();

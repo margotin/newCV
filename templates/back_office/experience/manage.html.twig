@@ -1,4 +1,4 @@
-{% extends 'back_office/admin.base.html.twig' %}
+{% extends 'back_office/base.html.twig' %}
 
 {% block body %}
 
@@ -11,7 +11,7 @@
 {% endfor %}
 
 
- <div class="d-flex">
+ <div class="d-flex justify-content-between">
       <h2 class="h1">Expérience</h2>
       <a href="{{ path('create_experience') }}" class="btn btn-sm btn-primary ml-3 align-self-center">Créer une expérience</a>
   </div>
