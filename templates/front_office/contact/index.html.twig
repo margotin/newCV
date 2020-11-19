@@ -7,7 +7,7 @@
     
     {% for label, messages in app.flashes %}
         {% for message in messages %}
-            <div class="alert alert-{{ label }}">
+            <div id="error_form_contact" class="alert alert-{{ label }}">
                 {{ message }}
             </div>
         {% endfor %}
@@ -22,13 +22,14 @@
             {{ form_row(form.adresseMail) }}
             {{ form_row(form.message) }}
 
-            <div class="g-recaptcha" data-sitekey="{{ sitekey }}"></div>
+            <div id="g-recaptcha" style="width: 304px; height: 78px;"></div>
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">Envoyer</button> 
             </div>
     {{ form_end(form) }}   
 {% endblock %}
 
-{% block javascripts %}
-    <script src="https://www.google.com/recaptcha/api.js"></script> 
+{% block javascripts %}   
+    {{ parent() }}
+    <script id = "script-recaptcha" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script> 
 {% endblock %}

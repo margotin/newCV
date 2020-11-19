@@ -8,11 +8,21 @@ use App\Repository\ExperienceRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+<<<<<<< HEAD
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * @Route("/admin/experiences")
+=======
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+/**
+ * @Route("/admin/experiences")
+ * @IsGranted("ROLE_ADMIN", statusCode=404, message="Page non trouvée...")
+>>>>>>> release/v1
  */
 class ExperienceController extends AbstractController
 {

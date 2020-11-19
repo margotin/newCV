@@ -15,50 +15,16 @@ import "@fortawesome/fontawesome-free/css/all.css"
 import $ from "jquery";
 global.$ = global.jQuery = $;
 
-// console.log('Hello Webpack Encore! Edit me in assets/app.js');
+// bootstrap
 import "bootstrap";
 import "bootstrap-datepicker";
 
 $.fn.datepicker.dates["fr"] = {
-  days: [
-    "dimanche",
-    "lundi",
-    "mardi",
-    "mercredi",
-    "jeudi",
-    "vendredi",
-    "samedi",
-  ],
+  days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
   daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
   daysMin: ["d", "l", "ma", "me", "j", "v", "s"],
-  months: [
-    "janvier",
-    "février",
-    "mars",
-    "avril",
-    "mai",
-    "juin",
-    "juillet",
-    "août",
-    "septembre",
-    "octobre",
-    "novembre",
-    "décembre",
-  ],
-  monthsShort: [
-    "janv.",
-    "févr.",
-    "mars",
-    "avril",
-    "mai",
-    "juin",
-    "juil.",
-    "août",
-    "sept.",
-    "oct.",
-    "nov.",
-    "déc.",
-  ],
+  months: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+  monthsShort: ["janv.", "févr.", "mars", "avril", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
   today: "Aujourd'hui",
   monthsTitle: "Mois",
   clear: "Effacer",
@@ -66,10 +32,11 @@ $.fn.datepicker.dates["fr"] = {
   format: "dd/mm/yyyy",
 };
 
+//button responsive menu
 const button = document.querySelector(".navbar-toggler");
 
 if (button !== null) {
-  button.addEventListener("click", (e) => {
+  button.addEventListener("click", () => {
     const nav = document.querySelector(".navbar-collapse");
     if (nav.classList.contains("show")) {
       nav.classList.remove("show");
@@ -78,3 +45,5 @@ if (button !== null) {
     }
   });
 }
+
+

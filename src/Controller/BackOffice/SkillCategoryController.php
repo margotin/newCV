@@ -2,18 +2,31 @@
 
 namespace App\Controller\BackOffice;
 
+<<<<<<< HEAD
 use App\Entity\SkillCategory;
 use App\Form\SkillType;
+=======
+use App\Form\SkillType;
+use App\Entity\SkillCategory;
+>>>>>>> release/v1
 use App\Form\SkillCategoryType;
 use App\Repository\SkillCategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+<<<<<<< HEAD
+=======
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+>>>>>>> release/v1
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin/competences/categories")
+<<<<<<< HEAD
+=======
+ * @IsGranted("ROLE_ADMIN", statusCode=404, message="Page non trouvée...")
+>>>>>>> release/v1
  */
 class SkillCategoryController extends AbstractController
 {

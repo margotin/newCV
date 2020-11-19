@@ -1,39 +1,33 @@
 {% extends 'front_office/base.html.twig' %}
 
 {% block title %}
-	{{ parent() }}
-	| Portfolio
+	{{ parent() }} | Portfolio
 {% endblock %}
 
 {% block section %}
 	<h1>Portfolio</h1>
 	<div class="d-flex flex-wrap justify-content-around"> 
-	{% for folio in portfolio %}
-		<div class="card mb-5 shadow" style="width: 18rem;">
-			<img src="{{ folio.image }}" class="card-img-top" alt="{{ folio.siteUrl }}"/>
-			<div class="card-body">
-				<h5 class="card-title text-center">{{ folio.title }}
-					<br>({{ folio.createdAt|format_datetime(pattern='MMMM Y')|capitalize }})</h5>
-				<p class="card-text">
-					<u>Technologies principales utilisées :</u>	<br/>
-					<small>{{ folio.usedTechnologies }}</small>
-				</p>
+		{% for folio in portfolio %}
+			<div class="card mb-5 shadow" style="width: 18rem;">
+				<img src="{{ folio.image }}" class="card-img-top" alt="{{ folio.siteUrl }}"/>
+				<div class="card-body">
+					<h5 class="card-title text-center">{{ folio.title }}
+						<br>({{ folio.createdAt|format_datetime(pattern='MMMM Y')|capitalize }})</h5>
+					<p class="card-text">
+						<u>Technologies principales utilisées :</u>	<br/>
+						<small>{{ folio.usedTechnologies }}</small>
+					</p>
+				</div>
+				<div class="card-body d-flex justify-content-around align-items-end">
+					{% set site = 'https://mathieumargotin.fr' %}				
+					{% if folio.siteUrl != site %}					
+						<a href="{{ folio.siteUrl }}" target="_blank" class="btn {% if 'factice' in folio.title %}btn-outline-primary{% else %}btn-primary btn-block{% endif %} ">Découvrir</a>					
+					{% endif %}
+					{% if folio.githubUrl is not null %}
+						<a class="align-self-center" href="{{ folio.githubUrl }}" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
+					{% endif %}
+				</div>
 			</div>
-			<div class="card-body d-flex justify-content-around align-items-end">
-				{% set site = 'https://mathieumargotin.fr' %}				
-				{% if folio.siteUrl != site %}					
-					<a href="{{ folio.siteUrl }}" target="_blank" class="btn {% if 'factice' in folio.title %}btn-outline-primary{% else %}btn-primary btn-block{% endif %} ">Découvrir</a>					
-				{% endif %}
-				{% if folio.githubUrl is not null %}
-					<a class="align-self-center" href="{{ folio.githubUrl }}" target="_blank"><img src="{{ asset('img/github-icon-1.svg') }}" alt="logo du site Github" width="30"></a>
-				{% endif %}
-					
-				
-			</div>
-		</div>
-	{% endfor %}
-
-
-
+		{% endfor %}
 	</div>
 {% endblock %}

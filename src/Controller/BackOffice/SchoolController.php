@@ -9,10 +9,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+<<<<<<< HEAD
+=======
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+>>>>>>> release/v1
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin/ecoles")
+<<<<<<< HEAD
+=======
+ * @IsGranted("ROLE_ADMIN", statusCode=404, message="Page non trouvée...")
+>>>>>>> release/v1
  */
 class SchoolController extends AbstractController
 {

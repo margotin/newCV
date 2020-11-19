@@ -1,9 +1,10 @@
-{% extends 'back_office/admin.base.html.twig' %}
+{% extends 'back_office/base.html.twig' %}
 
 {% block body %}
     {% include 'back_office/degree/_form.html.twig' with { form: form, title: "Créer un diplôme", action: "Créer" } %}
 {% endblock %}
 
 {% block javascripts %}
-     {% include 'back_office/degree/_form_javascript.html.twig' %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('date') }}
 {% endblock %}

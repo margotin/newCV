@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 {% extends 'back_office/admin.base.html.twig' %}
+=======
+{% extends 'back_office/base.html.twig' %}
+>>>>>>> release/v1
 
 {% block body %}
     {% include 'back_office/portfolio/_form.html.twig' with { form: form, title: "Créer un portfolio", action: "Créer" } %}
 {% endblock %}
 
 {% block javascripts %}
+<<<<<<< HEAD
      {% include 'back_office/portfolio/_form_javascript.html.twig' %}
+=======
+    {{ parent() }}
+    {{ encore_entry_script_tags('date') }}
+    {{ encore_entry_script_tags('portfolio') }}
+>>>>>>> release/v1
 {% endblock %}

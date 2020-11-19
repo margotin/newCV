@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}<meta name="robots" content="noindex, nofollow">{% endblock %}	
+{% block title %}Administration{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('app') }}{% endblock %}
+		
+{% block header %}
+	{% include "back_office/partial/_header.html.twig" %}
+{% endblock %}
+		
+{% block main %}
+	<div class="container mt-3" style="margin-bottom: 110px;"> 
+		{% block body %}{% endblock %}
+	</div>
+{% endblock %}		
+		
+{% block footer %}
+	{% include "back_office/partial/_footer.html.twig" %}
+{% endblock %}
+			
+{% block javascripts %}
+	{{ encore_entry_script_tags('app') }}
+{% endblock %}
+			
+		
