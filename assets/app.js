@@ -34,16 +34,28 @@ $.fn.datepicker.dates["fr"] = {
 
 //button responsive menu
 const button = document.querySelector(".navbar-toggler");
+const links = document.querySelectorAll(".navbar-nav .nav-link");
 
 if (button !== null) {
   button.addEventListener("click", () => {
-    const nav = document.querySelector(".navbar-collapse");
+    const nav = document.querySelector(".navbar-collapse");    
     if (nav.classList.contains("show")) {
       nav.classList.remove("show");
     } else {
       nav.classList.add("show");
     }
   });
+
+  links.forEach((link)=>{
+    link.addEventListener("click",() => {
+      const nav = document.querySelector(".navbar-collapse");    
+      if (nav.classList.contains("show")) {
+        nav.classList.remove("show");
+      } else {
+        nav.classList.add("show");
+      }
+    });
+  })
 }
 
 
