@@ -8,13 +8,6 @@ use App\Repository\DegreeRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-<<<<<<< HEAD
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-
-/**
- * @Route("/admin/diplomes")
-=======
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,7 +15,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 /**
  * @Route("/admin/diplomes")
  * @IsGranted("ROLE_ADMIN", statusCode=404, message="Page non trouvée...")
->>>>>>> release/v1
  */
 class DegreeController extends AbstractController
 {
