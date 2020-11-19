@@ -11,7 +11,6 @@ import "./styles/css/style.css";
 import "../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css";
 import "@fortawesome/fontawesome-free/css/all.css"
 
-
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 import $ from "jquery";
 global.$ = global.jQuery = $;
@@ -32,7 +31,6 @@ $.fn.datepicker.dates["fr"] = {
   weekStart: 1,
   format: "dd/mm/yyyy",
 };
-
 
 //button responsive menu
 const button = document.querySelector(".navbar-toggler");
