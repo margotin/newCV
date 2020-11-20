@@ -26,6 +26,7 @@ Encore
      */
     .addEntry('app', './assets/app.js')
     .addEntry('page', './assets/frontOffice/page.js')
+    .addEntry('animateHome', './assets/frontOffice/animateHome.js')
     .addEntry('date', './assets/backOffice/date.js')
     .addEntry('experience', './assets/backOffice/experience.js')
     .addEntry('portfolio', './assets/backOffice/portfolio.js')
