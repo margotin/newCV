@@ -21,5 +21,7 @@ const options = {
 const typed = new Typed("#typed", options);
 
 document.addEventListener("swup:contentReplaced", (event) => {
-  const typed = new Typed("#typed", options);
+    if(event.target.activeElement.pathname === '/'){ 
+        const typed = new Typed("#typed", options);
+    }
 });
