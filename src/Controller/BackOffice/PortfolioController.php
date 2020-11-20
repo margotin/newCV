@@ -69,10 +69,13 @@ class PortfolioController extends AbstractController
 
             $file = $form['image']->getData();
             if ($file !== null) {
-                $directory = $this->getParameter('kernel.project_dir') . '/public/uploads/';  
-                $file->move($directory, $file->getClientOriginalName());
+                $directory = $this->getParameter('kernel.project_dir') . '/public/uploads/';
+                $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);                
+                $newFileName = sprintf('%s-%s.%s', $safeFilename, uniqid(), $file->guessExtension());               
+                $file->move($directory, $newFileName);
                 unlink($this->getParameter('kernel.project_dir') . '/public' . $portfolio->getImage());
-                $portfolio->setImage('/uploads/' . $file->getClientOriginalName());
+                $portfolio->setImage('/uploads/' . $newFileName);
             }
 
             $this->getDoctrine()->getManager()->flush();
