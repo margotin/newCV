@@ -2,7 +2,6 @@
 
 namespace App\Controller\BackOffice;
 
-use App\Form\SkillType;
 use App\Entity\SkillCategory;
 use App\Form\SkillCategoryType;
 use App\Repository\SkillCategoryRepository;
@@ -54,7 +53,7 @@ class SkillCategoryController extends AbstractController
      */
     public function update(Request $request, SkillCategory $skillCategory): Response
     {
-        $form = $this->createForm(SkillType::class, $skillCategory);
+        $form = $this->createForm(SkillCategoryType::class, $skillCategory);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
