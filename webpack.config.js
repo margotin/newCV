@@ -29,9 +29,16 @@ Encore
   .addEntry("textAnimation", "./assets/frontOffice/textAnimation.js")
   .addEntry("date", "./assets/backOffice/date.js")
   .addEntry("experience", "./assets/backOffice/experience.js")
-  .addEntry("portfolio", "./assets/backOffice/portfolio.js")
+  .addEntry("path", "./assets/backOffice/path.js")
   //.addEntry('page1', './assets/page1.js')
   //.addEntry('page2', './assets/page2.js')
+  .copyFiles([
+    {from: './node_modules/ckeditor4/', to: 'ckeditor/[path][name].[ext]', pattern: /\.(js|css)$/, includeSubdirectories: false},
+    {from: './node_modules/ckeditor4/adapters', to: 'ckeditor/adapters/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/lang', to: 'ckeditor/lang/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/plugins', to: 'ckeditor/plugins/[path][name].[ext]'},
+    {from: './node_modules/ckeditor4/skins', to: 'ckeditor/skins/[path][name].[ext]'}
+  ])
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()
@@ -39,7 +46,6 @@ Encore
   // will require an extra script tag for runtime.js
   // but, you probably want this, unless you're building a single-page app
   .enableSingleRuntimeChunk()
-
   /*
    * FEATURE CONFIG
    *

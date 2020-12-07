@@ -2,30 +2,24 @@
 
 {% block section %}
 	<h1>Développeur Web</h1>
-	<div class="row mt-sm-4">
-		<div class="col-4 d-none d-sm-block d-md-block d-lg-block d-xl-block ">
-			<img class="rounded-circle shadow mx-auto d-block" src="{{ asset('img/mathieu.png') }}" alt="photo de mathieu margotin">			
-			<div class="text-center">
-				<span id="typed"></span>			
+	{% if home %}
+
+		<div class="row mt-sm-4">
+			<div class="col-4 d-none d-sm-block d-md-block d-lg-block d-xl-block ">
+				<img class="rounded-circle shadow mx-auto d-block" src="{{ asset(home.image) }}" alt="photo portrait">
+				<div class="text-center" data-title="{{ home.title }}">
+					<span id="typed"></span>
+				</div>
+			</div>
+			<div class="col mt-sm-3 h5">				
+					{{ home.content | raw }}			
 			</div>
 		</div>
-		<div class="col">
-			<p class=" mt-sm-3 h5 text-justify">
-				Bonjour et bienvenue sur mon site "CV en ligne" !
-				<br><br>
-				Je suis activement à la recherche d'un emploi dans le développement Web.<br>
-				Je recherche un poste idéalement sur Rambouillet et ces alentours.
-				<br>
-				Je suis disponible
-				<u>
-					<strong>immédiatement</strong>
-				</u>.
-			</p>
-		</div>
-	</div>
+	{% endif %}
 {% endblock %}
 
 {% block javascripts %}
-	{{ parent() }}		
+	{{ parent() }}
 	{{ encore_entry_script_tags('textAnimation') }}
+
 {% endblock %}
