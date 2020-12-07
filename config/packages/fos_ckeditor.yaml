@@ -1,0 +1,35 @@
+# Read the documentation: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/index.html
+
+twig:
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+fos_ck_editor:
+    base_path: "build/ckeditor"
+    js_path:   "build/ckeditor/ckeditor.js"
+    input_sync: true
+    configs:
+        presentation:
+            toolbar: "edition_basic"
+            removeButtons: ~
+            removeDialogTabs: ~
+            format_tags: "p;h1;h2;h3;h4;h5;h6;pre;address;div"
+            #extraPlugins : ['justify']
+            plugins : [ 'a11yhelp' ,'about' ,'basicstyles' ,'bidi' ,'blockquote' ,'clipboard' ,'colorbutton' ,'colordialog' ,'contextmenu' ,'copyformatting' ,'dialogadvtab' ,'div' ,'editorplaceholder' ,'elementspath' ,'enterkey' ,'entities' ,'exportpdf' ,'filebrowser' ,'find' ,'flash' ,'floatingspace' ,'font' ,'format' ,'forms' ,'horizontalrule' ,'htmlwriter' ,'iframe' ,'image' ,'indentblock' ,'indentlist' ,'justify' ,'language' ,'link' ,'list' ,'liststyle' ,'magicline' ,'maximize' ,'newpage' ,'pagebreak' ,'pastefromgdocs' ,'pastefromword' ,'pastetext' ,'pastetools' ,'preview' ,'print' ,'removeformat' ,'resize' ,'save' ,'scayt' ,'selectall' ,'showblocks' ,'showborders' ,'smiley' ,'sourcearea' ,'specialchar' ,'stylescombo' ,'tab' ,'table' ,'tableselection' ,'tabletools' ,'templates' ,'toolbar' ,'undo' ,'uploadimage' ,'wsc' ,'wysiwygarea'  ]
+            skin: 'moono'
+               
+    toolbars:
+        configs:
+            edition_basic: [ "@document", "@clipboard", "@editing", "@tools", "/", "@basicstyles", "@paragraph", "@links", "@insert", "/", "@styles", "@colors" ]
+        items:
+            document: [ 'Source', '-', 'Preview', '-' ]
+            clipboard: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ]
+            editing: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ]
+            tools: [ 'Maximize', 'ShowBlocks' ]
+            basicstyles: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript','CopyFormatting', 'RemoveFormat' ]
+            paragraph: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-' ]
+            links: [ 'Link', 'Unlink', 'Anchor' ]
+            insert: [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar' ]
+            styles: [ 'Styles', 'Format', 'Font', 'FontSize' ]
+            colors: [ 'TextColor', 'BGColor' ]
+    

@@ -2,15 +2,34 @@
 
 {% block body %}
 
-{% for label, messages in app.flashes %}
-    {% for message in messages %}
-        <div class="alert alert-{{ label }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endfor %}
-      <h2 class="h1">Accueil</h2>
+	{% for label, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="alert alert-{{ label }}">
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endfor %}
+	<h2 class="h1">Accueil</h2>
+	{{form_start(form)}}
+	<div class="row mt-3">
+		<div class="col-lg-6">
+			{{form_row(form.title)}}
+			{{form_row(form.image)}}
+			<img class="rounded-circle shadow d-block mb-2" src="{{ asset(home.image) }}">
+		</div>
+
+		<div class="col-lg-6 d-flex flex-column justify-content-center">
+			{{form_widget(form.content)}}
+		</div>
+	</div>
+	<button type="submit" class="btn btn-block btn-lg btn-primary mt-5">Valider</button>
+
+	{{form_end(form)}}
+
+
 {% endblock %}
 
-
-
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('path') }}
+{% endblock %}
