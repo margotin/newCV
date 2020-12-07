@@ -15,7 +15,7 @@
 		<div class="col-lg-6">
 			{{form_row(form.title)}}
 			{{form_row(form.image)}}
-			<img class="rounded-circle shadow d-block mb-2" src="{{ asset(home.image) }}">
+			<img class="rounded-circle shadow d-block mb-2" src={% if home.id %}"{{ asset(home.image) }}"{% endif %}>
 		</div>
 
 		<div class="col-lg-6 d-flex flex-column justify-content-center">
